@@ -12,7 +12,7 @@ const AdminDashboard = () => {
         <h4 className="card-header">Admin Links</h4>
         <ul className="list-group">
           <li className="list-group-item">
-            <Link className="nav-link" to="/create/category ">Create category</Link>
+            <Link className="nav-link" to="/create/category">Create category</Link>
           </li>
           <li className="list-group-item">
             <Link className="nav-link" to="/create/product">Create product</Link>
