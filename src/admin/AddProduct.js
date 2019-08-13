@@ -6,7 +6,6 @@ import {createProduct} from "./apiAdmin";
 
 const AddProduct = () => {
 
-  const {user, token} = isAuthenticated();
   const [values, setValues] = useState({
     name: '',
     description: '',
@@ -22,6 +21,7 @@ const AddProduct = () => {
     formData: ''
   })
 
+  const {user, token} = isAuthenticated();
   const {
     name,
     description,
@@ -47,7 +47,19 @@ const AddProduct = () => {
   };
 
   const clickSubmit = (event) => {
-    //
+    event.preventDefault();
+    setValues({...values, error: '', loading: true});
+
+    createProduct(user._id, token, formData)
+    .then(data => {
+      if(data.error) {
+        setValues({...values, error: data.error})
+      } else {
+        setValues({
+          ...values, name: '', description: '', photo: '', price: '', quantity: '', loading: false, createdProduct: data.name
+        })
+      }
+    })
   }
 
   const newPostForm = () => (
@@ -77,6 +89,7 @@ const AddProduct = () => {
       <div className="form-group">
           <label className="text-muted">Category</label>
           <select onChange={handleChange('category')} className="form-control">
+            <option value="5d521489b9e17b21833cbd9e">Philosophy</option>
             <option value="5d5156ccb9e17b21833cbd9a">Philosophy of Science</option>
           </select>
       </div>
@@ -101,7 +114,7 @@ const AddProduct = () => {
   return (
     <Layout title="Add a new product" description={`Hello, ${user.name}! `}>
       <div className="row">
-        <div className="col-md-8 offset-md-2">
+        <div className="container col-md-8 offset-md-2">
           {newPostForm()}
         </div>
       </div>
