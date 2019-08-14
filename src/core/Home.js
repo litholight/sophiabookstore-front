@@ -35,7 +35,7 @@ const Home = () => {
   }, [])
 
   return (
-    <Layout title="Home Page" description="Sophia Book Store" className="container-fluid">
+    <Layout title="Sophia's Bookstore" description="A live demonstration of Stoneburner Software" className="container-fluid">
       
       <h2 className="mb-4">New Arrivals</h2>
       <div className="row">
