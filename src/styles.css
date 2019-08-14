@@ -1,0 +1,11 @@
+.nav {
+  background-color: rgb(123, 47, 173) !important;
+}
+
+.jumbotron {
+  background-color: rgb(227, 185, 255);
+}
+
+.product-img {
+  min-height: 100px;
+}
