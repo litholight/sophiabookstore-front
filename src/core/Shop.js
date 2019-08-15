@@ -21,7 +21,11 @@ const Shop = () => {
 
   useEffect(() => {
     init();
-  }, [])
+  }, []);
+
+  const handleFilters = (filters, filterBy) => {
+    console.log("SHOP", filters, filterBy);
+  }
 
   return (
     <Layout title="Sophia's Bookstore" description="Used books at a great price!" className="container-fluid">
@@ -29,7 +33,7 @@ const Shop = () => {
         <div className="col-4">
           <h4>Filter by categories</h4>
           <ul>
-            <Checkbox categories={categories}/>
+            <Checkbox categories={categories} handleFilters={filters => handleFilters(filters, 'category ')}/>
           </ul>
         </div>
         <div className="col-8">right</div>
