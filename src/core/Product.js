@@ -24,13 +24,12 @@ const Product = (props) => {
 
   return (
     <Layout
-      title="Sophia's Bookstore"
-      description="A live demonstration of Stoneburner Software"
+      title={product && product.name}
+      description={product && product.description && product.description.substring(0,100)}
       className="container-fluid"
-    >
-      <h2 className="mb-4">Single book</h2>
+    > 
       <div className="row">
-        {JSON.stringify(product)}
+        {product && product.description && <Card product={product} showViewProductButton={false} />}
       </div>
     </Layout>
   );
