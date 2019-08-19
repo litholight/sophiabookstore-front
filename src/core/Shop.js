@@ -99,7 +99,7 @@ const Shop = () => {
   return (
     <Layout
       title="Sophia's Bookstore"
-      description="Used books at a great price!"
+      description="Quality, used books"
       className="container-fluid"
     >
       <div className="row">

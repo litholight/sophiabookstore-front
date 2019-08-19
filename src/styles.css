@@ -9,3 +9,23 @@
 .product-img {
   min-height: 100px;
 }
+
+/* single product page - product name */
+.name {
+  background-color: indigo;
+  color: white;
+  font-weight: bold;
+}
+
+/* black shades */
+.black-10 {
+  background-color: #f2f2f2;
+}
+
+.black-9 {
+  background-color: #dbdbdb;
+}
+
+.black-8 {
+  background-color: #b8b8b8;
+}
